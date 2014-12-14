@@ -1,0 +1,8 @@
+<project>
+	<target name="javah">
+		<echo>Creating JNI Header files</echo>
+		<javah classpath="./build/classes/main" destdir="./KinectBridge/JNI" force="yes">
+			<class name = "org.nowireless.kinect.internal.Native"/>
+		</javah>
+	</target>
+</project>
