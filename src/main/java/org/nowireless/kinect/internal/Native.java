@@ -2,7 +2,9 @@ package org.nowireless.kinect.internal;
 
 public class Native {
 	public static native long freenectInit();
+	public static native void freenectShutDown();
 	public static native void freenectSetLogLevel(long context, int level);
+	public static native void freenectSelectMotorAndCamera();
 	public static native int freenectProcessEvents(long context);
 	//NO static native void freenectProceesEventsTimeout();
 	public static native int freenectNumDevices(long context);
@@ -20,4 +22,6 @@ public class Native {
 	public static native void freenectSetLed();
 	public static native void freenectGetVideoModeCount();
 	public static native void freenectGetDepthModeCount();
+	
+	public static native void test();
 }

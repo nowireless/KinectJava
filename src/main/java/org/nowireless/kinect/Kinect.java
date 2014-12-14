@@ -4,7 +4,7 @@ import org.nowireless.kinect.internal.Native;
 
 public class Kinect {
 	private static final int DUMMY = 2147483647;
-	public static final String NATIVE_LIBRARY = "";
+	public static final String NATIVE_LIBRARY = "KinectBridge";
 	
 	public enum DeviceFlags {
 		FREENECT_DEVICE_MOTOR(0x01),
@@ -138,6 +138,10 @@ public class Kinect {
 			Native.freenectSetLogLevel(handle, level.val);
 		}
 		
+		public void selectMotorAndCamreaSubDevices() {
+			Native.freenectSelectMotorAndCamera();
+		}
+		
 		public boolean processEvents() {
 			int status = Native.freenectProcessEvents(handle);
 			return status == 0;
@@ -187,6 +191,10 @@ public class Kinect {
 	
 	public static void loadLibrary() {
 		System.loadLibrary(NATIVE_LIBRARY);
+	}
+	
+	public static void shutdown() {
+		Native.freenectShutDown();
 	}
 	
 	public static Context createContext() {

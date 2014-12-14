@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BABA78C1A3E14AE009A95DE /* KinectBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BABA78B1A3E14AE009A95DE /* KinectBridge.h */; };
+		3BABA78E1A3E14CC009A95DE /* KinectBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BABA78D1A3E14CC009A95DE /* KinectBridge.cpp */; };
+		3BBD4DD31A3E158E00283C8F /* org_nowireless_kinect_internal_Native.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BBD4DD21A3E158E00283C8F /* org_nowireless_kinect_internal_Native.h */; };
+		3BBD4DD51A3E190A00283C8F /* libfreenect.0.5.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBD4DD41A3E190A00283C8F /* libfreenect.0.5.1.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3BABA77A1A3E142C009A95DE /* libKinectBridge.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKinectBridge.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BABA78B1A3E14AE009A95DE /* KinectBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectBridge.h; sourceTree = "<group>"; };
+		3BABA78D1A3E14CC009A95DE /* KinectBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectBridge.cpp; sourceTree = "<group>"; };
+		3BBD4DD21A3E158E00283C8F /* org_nowireless_kinect_internal_Native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = org_nowireless_kinect_internal_Native.h; path = JNI/org_nowireless_kinect_internal_Native.h; sourceTree = SOURCE_ROOT; };
+		3BBD4DD41A3E190A00283C8F /* libfreenect.0.5.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreenect.0.5.1.dylib; path = ../../../../../usr/local/lib/libfreenect.0.5.1.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BABA7771A3E142C009A95DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBD4DD51A3E190A00283C8F /* libfreenect.0.5.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BABA7711A3E142C009A95DE = {
+			isa = PBXGroup;
+			children = (
+				3BBD4DD41A3E190A00283C8F /* libfreenect.0.5.1.dylib */,
+				3BABA77C1A3E142C009A95DE /* KinectBridge */,
+				3BABA77B1A3E142C009A95DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BABA77B1A3E142C009A95DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BABA77A1A3E142C009A95DE /* libKinectBridge.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BABA77C1A3E142C009A95DE /* KinectBridge */ = {
+			isa = PBXGroup;
+			children = (
+				3BABA7881A3E1482009A95DE /* JNI */,
+				3BABA78B1A3E14AE009A95DE /* KinectBridge.h */,
+				3BABA78D1A3E14CC009A95DE /* KinectBridge.cpp */,
+			);
+			path = KinectBridge;
+			sourceTree = "<group>";
+		};
+		3BABA7881A3E1482009A95DE /* JNI */ = {
+			isa = PBXGroup;
+			children = (
+				3BBD4DD21A3E158E00283C8F /* org_nowireless_kinect_internal_Native.h */,
+			);
+			name = JNI;
+			path = ../../JNI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3BABA7781A3E142C009A95DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBD4DD31A3E158E00283C8F /* org_nowireless_kinect_internal_Native.h in Headers */,
+				3BABA78C1A3E14AE009A95DE /* KinectBridge.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3BABA7791A3E142C009A95DE /* KinectBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BABA7851A3E142C009A95DE /* Build configuration list for PBXNativeTarget "KinectBridge" */;
+			buildPhases = (
+				3BABA7761A3E142C009A95DE /* Sources */,
+				3BABA7771A3E142C009A95DE /* Frameworks */,
+				3BABA7781A3E142C009A95DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KinectBridge;
+			productName = KinectBridge;
+			productReference = 3BABA77A1A3E142C009A95DE /* libKinectBridge.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BABA7721A3E142C009A95DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Ryan Sjostrand";
+				TargetAttributes = {
+					3BABA7791A3E142C009A95DE = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 3BABA7751A3E142C009A95DE /* Build configuration list for PBXProject "KinectBridge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BABA7711A3E142C009A95DE;
+			productRefGroup = 3BABA77B1A3E142C009A95DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BABA7791A3E142C009A95DE /* KinectBridge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BABA7761A3E142C009A95DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BABA78E1A3E14CC009A95DE /* KinectBridge.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3BABA7831A3E142C009A95DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/home/include/**",
+					/opt/local/include,
+					"/usr/local/include/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/opt/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = ./JNI;
+			};
+			name = Debug;
+		};
+		3BABA7841A3E142C009A95DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/home/include/**",
+					/opt/local/include,
+					"/usr/local/include/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/opt/local/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = ./JNI;
+			};
+			name = Release;
+		};
+		3BABA7861A3E142C009A95DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		3BABA7871A3E142C009A95DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BABA7751A3E142C009A95DE /* Build configuration list for PBXProject "KinectBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BABA7831A3E142C009A95DE /* Debug */,
+				3BABA7841A3E142C009A95DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BABA7851A3E142C009A95DE /* Build configuration list for PBXNativeTarget "KinectBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BABA7861A3E142C009A95DE /* Debug */,
+				3BABA7871A3E142C009A95DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BABA7721A3E142C009A95DE /* Project object */;
+}

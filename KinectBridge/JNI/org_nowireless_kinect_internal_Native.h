@@ -127,6 +127,14 @@ JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_freenectGetVid
 JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_freenectGetDepthModeCount
   (JNIEnv *, jclass);
 
+/*
+ * Class:     org_nowireless_kinect_internal_Native
+ * Method:    test
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_test
+  (JNIEnv *, jclass);
+
 #ifdef __cplusplus
 }
 #endif
