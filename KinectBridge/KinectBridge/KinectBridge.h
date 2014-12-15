@@ -9,7 +9,6 @@
 #ifndef KinectBridge_KinectBridge_h
 #define KinectBridge_KinectBridge_h
 
-
 #include <iostream>
 #include <libfreenect/libfreenect.h>
 #include "org_nowireless_kinect_internal_Native.h"

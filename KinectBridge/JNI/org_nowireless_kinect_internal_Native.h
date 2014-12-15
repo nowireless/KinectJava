@@ -17,11 +17,27 @@ JNIEXPORT jlong JNICALL Java_org_nowireless_kinect_internal_Native_freenectInit
 
 /*
  * Class:     org_nowireless_kinect_internal_Native
+ * Method:    freenectShutDown
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_freenectShutDown
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     org_nowireless_kinect_internal_Native
  * Method:    freenectSetLogLevel
  * Signature: (JI)V
  */
 JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_freenectSetLogLevel
   (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     org_nowireless_kinect_internal_Native
+ * Method:    freenectSelectMotorAndCamera
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_freenectSelectMotorAndCamera
+  (JNIEnv *, jclass, jlong);
 
 /*
  * Class:     org_nowireless_kinect_internal_Native

@@ -74,15 +74,15 @@ public class TiltTest {
 		log.info("Found {} Kinects Connected", num);
 		if(num == 0) {
 			log.fatal("No Kinects found");
-			Kinect.shutdown();
+			cxt.shutdown();
 			System.exit(1);
+			
 		}
-		
 		Device dev = cxt.openDevice(0);
 		
 		if(dev == null) {
 			log.fatal("Device is NULL!");
-			Kinect.shutdown();
+			cxt.shutdown();
 			System.exit(1);
 		}
 		
@@ -95,7 +95,7 @@ public class TiltTest {
 			e.printStackTrace();
 		}
 		
-		Kinect.shutdown();
+		cxt.shutdown();
 		
 	}
 	

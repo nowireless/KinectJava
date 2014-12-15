@@ -139,7 +139,7 @@ public class Kinect {
 		}
 		
 		public void selectMotorAndCamreaSubDevices() {
-			Native.freenectSelectMotorAndCamera();
+			Native.freenectSelectMotorAndCamera(handle);
 		}
 		
 		public boolean processEvents() {
@@ -155,6 +155,10 @@ public class Kinect {
 			long device = Native.freenectOpenDevice(handle, index);
 			if(device == 0) return new Device(handle);
 			return null;
+		}
+		
+		public void shutdown() {
+			Native.freenectShutDown(handle);
 		}
 		
 		//public boolean closedevice() {
@@ -191,10 +195,6 @@ public class Kinect {
 	
 	public static void loadLibrary() {
 		System.loadLibrary(NATIVE_LIBRARY);
-	}
-	
-	public static void shutdown() {
-		Native.freenectShutDown();
 	}
 	
 	public static Context createContext() {
