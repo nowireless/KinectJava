@@ -129,7 +129,7 @@ public class Kinect {
 	}
 	
 	public static class Context {
-		private final long handle;
+		public final long handle;
 		public Context(long handle) {
 			this.handle = handle;
 		}
@@ -153,7 +153,7 @@ public class Kinect {
 		
 		public Device openDevice(int index) {
 			long device = Native.freenectOpenDevice(handle, index);
-			if(device == 0) return new Device(handle);
+			if(device != 0) return new Device(device);
 			return null;
 		}
 		
@@ -167,7 +167,7 @@ public class Kinect {
 	}
 	
 	public static class Device {
-		private final long handle;
+		public final long handle;
 		public Device(long handle) {
 			this.handle = handle;
 		}

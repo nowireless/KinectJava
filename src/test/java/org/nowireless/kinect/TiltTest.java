@@ -30,6 +30,8 @@ public class TiltTest {
 				TiltTest.log.info("Tilting Kinect to {} degs", angle);
 				dev.setTiltAngle(angle);
 				
+				state = !state;
+				
 				try {
 					Thread.sleep(3000);
 				} catch (InterruptedException e) {
@@ -80,17 +82,20 @@ public class TiltTest {
 		}
 		Device dev = cxt.openDevice(0);
 		
+		log.info("Device Handle {}", cxt.handle);
+		
 		if(dev == null) {
 			log.fatal("Device is NULL!");
 			cxt.shutdown();
 			System.exit(1);
 		}
 		
-		MainThread thread = new MainThread(dev);
-		Runtime.getRuntime().addShutdownHook(new ShutDownHook(thread));
+		Thread main = new MainThread(dev);
+		Runtime.getRuntime().addShutdownHook(new ShutDownHook(main));
+		main.start();
 		
 		try {
-			thread.join();
+			main.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
