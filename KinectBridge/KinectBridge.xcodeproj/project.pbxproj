@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B8102281A40ED88007B3C15 /* libopencv_core.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8102261A40ED88007B3C15 /* libopencv_core.2.4.9.dylib */; };
+		3B8102291A40ED88007B3C15 /* libopencv_imgproc.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8102271A40ED88007B3C15 /* libopencv_imgproc.2.4.9.dylib */; };
 		3BABA78C1A3E14AE009A95DE /* KinectBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BABA78B1A3E14AE009A95DE /* KinectBridge.h */; };
 		3BABA78E1A3E14CC009A95DE /* KinectBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BABA78D1A3E14CC009A95DE /* KinectBridge.cpp */; };
 		3BBD4DD31A3E158E00283C8F /* org_nowireless_kinect_internal_Native.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BBD4DD21A3E158E00283C8F /* org_nowireless_kinect_internal_Native.h */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B8102261A40ED88007B3C15 /* libopencv_core.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_core.2.4.9.dylib; sourceTree = "<group>"; };
+		3B8102271A40ED88007B3C15 /* libopencv_imgproc.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_imgproc.2.4.9.dylib; sourceTree = "<group>"; };
 		3BABA77A1A3E142C009A95DE /* libKinectBridge.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKinectBridge.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BABA78B1A3E14AE009A95DE /* KinectBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectBridge.h; sourceTree = "<group>"; };
 		3BABA78D1A3E14CC009A95DE /* KinectBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectBridge.cpp; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8102281A40ED88007B3C15 /* libopencv_core.2.4.9.dylib in Frameworks */,
+				3B8102291A40ED88007B3C15 /* libopencv_imgproc.2.4.9.dylib in Frameworks */,
 				3BBD4DD51A3E190A00283C8F /* libfreenect.0.5.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,6 +42,8 @@
 		3BABA7711A3E142C009A95DE = {
 			isa = PBXGroup;
 			children = (
+				3B8102261A40ED88007B3C15 /* libopencv_core.2.4.9.dylib */,
+				3B8102271A40ED88007B3C15 /* libopencv_imgproc.2.4.9.dylib */,
 				3BBD4DD41A3E190A00283C8F /* libfreenect.0.5.1.dylib */,
 				3BABA77C1A3E142C009A95DE /* KinectBridge */,
 				3BABA77B1A3E142C009A95DE /* Products */,

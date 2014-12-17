@@ -23,5 +23,10 @@ public class Native {
 	public static native void freenectGetVideoModeCount();
 	public static native void freenectGetDepthModeCount();
 	
+	public static native long opencvGetVideoBuffer();
+	public static native void opencvImageHasBeenRead();
+	public static native int opencvIsImageUnread();
+	
 	public static native void test();
+	public static native void openCVTestImage(long dst);
 }

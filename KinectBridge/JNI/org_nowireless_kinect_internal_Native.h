@@ -145,11 +145,43 @@ JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_freenectGetDep
 
 /*
  * Class:     org_nowireless_kinect_internal_Native
+ * Method:    opencvGetVideoBuffer
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_org_nowireless_kinect_internal_Native_opencvGetVideoBuffer
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     org_nowireless_kinect_internal_Native
+ * Method:    opencvImageHasBeenRead
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_opencvImageHasBeenRead
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     org_nowireless_kinect_internal_Native
+ * Method:    opencvIsImageUnread
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_org_nowireless_kinect_internal_Native_opencvIsImageUnread
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     org_nowireless_kinect_internal_Native
  * Method:    test
  * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_test
   (JNIEnv *, jclass);
+
+/*
+ * Class:     org_nowireless_kinect_internal_Native
+ * Method:    openCVTestImage
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_org_nowireless_kinect_internal_Native_openCVTestImage
+  (JNIEnv *, jclass, jlong);
 
 #ifdef __cplusplus
 }

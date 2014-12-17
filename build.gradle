@@ -20,12 +20,12 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.5'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.1'
+    compile files('./lib/opencv-249.jar')
 
-    testCompile "junit:junit:4.11"
+testCompile "junit:junit:4.11"
 }
 
 task createHeaders(dependsOn: [build]) {
-    println 'Creating Headers for org.nowireless.kinect.internal.Native'
     finalizedBy javah
 }
 //javah.mustRunAfter createHeaders

@@ -1,10 +1,15 @@
 package org.nowireless.kinect;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.nowireless.kinect.internal.Native;
+import org.opencv.core.Mat;
+import org.opencv.highgui.Highgui;
 
 public class Kinect {
 	private static final int DUMMY = 2147483647;
 	public static final String NATIVE_LIBRARY = "KinectBridge";
+	public static final long CONTEXT_THREAD_SLEEP = 5;
 	
 	public enum DeviceFlags {
 		FREENECT_DEVICE_MOTOR(0x01),
@@ -153,7 +158,7 @@ public class Kinect {
 		
 		public Device openDevice(int index) {
 			long device = Native.freenectOpenDevice(handle, index);
-			if(device != 0) return new Device(device);
+			if(device != 0) return new Device(this,device);
 			return null;
 		}
 		
@@ -167,9 +172,11 @@ public class Kinect {
 	}
 	
 	public static class Device {
+		public final Context context;
 		public final long handle;
-		public Device(long handle) {
+		public Device(Context context, long handle) {
 			this.handle = handle;
+			this.context = context;
 		}
 		
 		public boolean startDepth() {
@@ -191,6 +198,65 @@ public class Kinect {
 		public boolean setTiltAngle(double angle) {
 			return Native.freenectSetTiltDegs(handle, angle) == 0;
 		}
+	}
+	
+	public static class ContextThread extends Thread {
+		private final Logger log = LogManager.getLogger();
+		private volatile boolean run = false;
+		public final Context cxt;
+		public final Device dev;
+		private final long sleep;
+		
+		public ContextThread(Device dev, long sleep) {
+			this.dev = dev;
+			this.cxt = dev.context; 
+			this.sleep = sleep;
+		}
+		
+		public ContextThread(Device dev) {
+			this(dev, CONTEXT_THREAD_SLEEP);
+		}
+		
+		@Override
+		public void run() {
+			run = true;
+			log.trace("Entering Context Thread loop");
+			
+			log.trace("Starting Video");
+			if(!dev.startVideo()) {
+				log.fatal("Could not start video");
+			}
+			
+			Mat buf = new Mat(Native.opencvGetVideoBuffer());
+			log.trace("VideoBuff {}",  buf);
+			
+			while(run) {
+				log.trace("Procssing Events");
+				if(cxt.processEvents()) {
+					if(Native.opencvIsImageUnread() == 1) {
+						log.trace("New Frame!");
+						log.trace("VideoBuff {}",  buf);
+						
+						Highgui.imwrite("Kinect.jpg", buf);
+						
+						Native.opencvImageHasBeenRead();
+					}
+					log.trace("Processed Events");
+				} else {
+					log.warn("Could not Process Events");
+				}
+				
+				try {
+					Thread.sleep(sleep);
+				} catch (InterruptedException e) {
+					log.trace("Breaking Context Thread loop");
+					break;
+				}
+			}
+			
+			log.trace("Exiting Context thread");
+		}
+		
 	}
 	
 	public static void loadLibrary() {
